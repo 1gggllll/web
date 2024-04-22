@@ -1,9 +1,11 @@
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletInputStream;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
 
@@ -49,5 +51,11 @@ public class Httprequest extends HttpServlet {
             }
         }
         //以上API专门用于key-value形式的，不论在位置在url后还是请求体里面.
+       /** 获得请求体中的非键值对数据?
+ 获取一个从请求体中读取字符的字符输入流
+BufferedReader reader = req.getReader(); JSON串
+ 获得一个从请求中读取二进制数据字节的输入流
+ ServletInputStream inputStream = reg.getInputStream();文件
+        */
     }
 }
