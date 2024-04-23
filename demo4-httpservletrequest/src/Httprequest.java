@@ -1,3 +1,4 @@
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletInputStream;
 import jakarta.servlet.annotation.WebServlet;
@@ -57,5 +58,24 @@ BufferedReader reader = req.getReader(); JSON串
  获得一个从请求中读取二进制数据字节的输入流
  ServletInputStream inputStream = reg.getInputStream();文件
         */
+       //请求转发
+        /*
+        1.请求转发是通过httpservletrequest对象实现的 req.getRequestDisatcher("")
+       2.请求转发是服务器内部行为，对客户是屏蔽的
+       3.客户端只产生的一次请求，服务器只产生了一对req，resp对象
+       4.客户端的地址栏不变
+       5.请求的参数是可以继续传递的
+       6.目标资源可以是servlet动态资源，也可以是html静态资源
+       7.目标资源可以是web-inf下受保护的资源，该方式也是web-inf下资源唯一访问的方式
+       8.目标资源不可以是外部资源
+         */
+        //获得请求转发器
+        RequestDispatcher servlet05 = req.getRequestDispatcher("servlet05");
+       //RequestDispatcher servlet06 = req.getRequestDispatcher("aaaa.html");
+       //RequestDispatcher servley07 = req.getRequestDispatcher("WEB-INF/web-infffff.html");
+        //RequestDispatcher servley08 = req.getRequestDispatcher("http://www.atguigu.com"); 不能行
+        //让请求转发器做出转发的动作
+        servlet05.forward(req,resp);
     }
 }
+
