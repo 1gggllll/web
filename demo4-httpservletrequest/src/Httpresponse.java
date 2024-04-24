@@ -1,11 +1,14 @@
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import javax.naming.Name;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.Key;
 
 /**
  * ClassName: Httpresponse
@@ -24,7 +27,7 @@ public class Httpresponse extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //设置响应头相关的API
         resp.setStatus(200);
-        String info = "<h1>hello</h1>";
+       String info = "<h1>hello</h1>";
         //设置响应头相关的API
 //        resp.setHeader("aaa","valuea"); 可以自己随便写
 //        resp.setHeader("Content-Type","text/html");
@@ -48,8 +51,8 @@ public class Httpresponse extends HttpServlet {
            7.目标资源不可以是WEB-INF下的资源
            8.目标资源可以是外部资源
        */
-        resp.sendRedirect("servlet04");//两种方法都可以的情况下用重定向
-        //resp.sendRedirect("aaaa.html")
+        //resp.sendRedirect("servlet04");//两种方法都可以的情况下用重定向
+        //resp.sendRedirect("aaaa.html");
         //resp.sendRedirect("WEB-INF/web-inffffff.html") 不能
         //resp.sendRedirect("http://www.atguigu.com") 可以
 

@@ -22,15 +22,14 @@ import java.util.Enumeration;
  * @Version 1.0
  */
 @WebServlet(
-        urlPatterns = "/servlet1",
-        initParams = {@WebInitParam(name = "key",value = "value")}
-
+        urlPatterns = "/servlet1"
 )
 public class servlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ServletConfig servletConfig = getServletConfig();
-        String key= servletConfig.getInitParameter("key");
+       //ServletConfig
+        ServletConfig servletConfig = this.getServletConfig();
+        String key= servletConfig.getInitParameter("key");//
         System.out.println("key:"+key);
         Enumeration<String> initPaeameterNames = servletConfig.getInitParameterNames();
         while (initPaeameterNames.hasMoreElements()){

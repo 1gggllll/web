@@ -20,7 +20,7 @@ import java.io.PrintWriter;
 public class UserServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //从request获取请求中的信息
+        //从request获取请求中的信息 getParameter()
        String username= request.getParameter("username");
         //处理业务代码
 String info="YES";
@@ -30,8 +30,8 @@ if("zhangsan".equals(username)){
 //设置response的Content-Type响应头
         //response.setHeader("Content-Type","text/html");
         response.setContentType("text/html");
-        //将要响应的数据放到response对象
+        //将要响应的数据放到response对象 getWriter()
         PrintWriter writer = response.getWriter();
-writer.write(info);
+        writer.write(info);
     }
 }
