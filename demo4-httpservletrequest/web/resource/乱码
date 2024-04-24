@@ -1,4 +1,11 @@
-get乱码
-    设置TomCat(默认UTF-8)(connector URIEncoding="") 只能改变url后面跟着的键值对的编码，对post无效
-post乱码
-    设置请求体的解码使用的字符集 req.setCharacterEncoding("GBK")
+ 请求乱码
+    get乱码
+        设置TomCat(默认UTF-8)(connector URIEncoding="") 只能改变url后面跟着的键值对的编码，对post无效
+    post乱码
+        设置请求体的解码使用的字符集 req.setCharacterEncoding("GBK")
+响应乱码
+    resp.getWriter().write("你好 hello")出现乱码
+        解决思路:1.设置响应体的编码字符集和客户端保持一致 resp.setCharacterEncoding("GBK") 该方法不推荐因为客户端的字符集无法预测
+                2.告诉客户端使用指定的字符集进行解码，要明确响应体编码
+                resp.setCharacterEncoding("UTF-8"); 默认就是u8
+                resp.setContentType("text/html;charset=UTF-8")

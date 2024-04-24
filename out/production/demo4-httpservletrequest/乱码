@@ -1,0 +1,4 @@
+get乱码
+    设置TomCat(默认UTF-8)(connector URIEncoding="") 只能改变url后面跟着的键值对的编码，对post无效
+post乱码
+    设置请求体的解码使用的字符集 req.setCharacterEncoding("GBK")
