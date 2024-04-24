@@ -1,0 +1,15 @@
+普通文件
+    当前资源的请求路径:http://localhost:8080/demo05/index.html
+    当前资源是:index.html
+    当前资源的所在路径:http://localhost:8080/demo05/
+    目标资源路径 static/img/logo.png
+    相对路径的规则就是在当前资源的所在路径后,拼接目标资源的路径,然后发送请求找目标资源
+    http://localhost:8080/demo05/static/img/logo.png
+    index.html
+WEB-INF文件
+    WEB-INF里的文件只能用请求转发来访问，该文件磁盘路径与url路径不同
+    因为此时的url是看的是发送请求的文件的url，不是WEB-INF文件的url
+    例如：当前资源:view1Servlet
+       当前资源的所在路径 http://localhost:8080/demo05/
+       目标资源的相对路径是 :.. / .. /static/img/logo.png
+       目标资源加载时的路径是 http://localhost:8080/demo05/ .. / .. /static/img/logo.png
