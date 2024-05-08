@@ -34,7 +34,7 @@ public class servlet extends HttpServlet {
         Enumeration<String> initPaeameterNames = servletConfig.getInitParameterNames();
         while (initPaeameterNames.hasMoreElements()){
             String pname=initPaeameterNames.nextElement();
-            System.out.println(pname+"="+getInitParameter(pname));
+            System.out.println(pname+"="+getInitParameter(pname));}
             //SeverletContext的应用与上述基本类似
             //ServletContext的更多应用API
             //1.获取真实路径getRealPath
@@ -49,4 +49,4 @@ public class servlet extends HttpServlet {
             //| void removeAttribute(String key);           | 移除域中的数据      |
         }
     }
-}
+
